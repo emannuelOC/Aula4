@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "LPExercise.h"
 
 @interface ViewController ()
 @property NSArray *exercises;
@@ -31,13 +32,13 @@
             NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
             if (results) {
                 NSArray *exercises = results[@"results"];
-                NSMutableArray *exerciseTitles = [[NSMutableArray alloc] init];
-                for (NSDictionary *exercise in exercises) {
-                    NSString *exerciseTitle = exercise[@"name"];
-                    [exerciseTitles addObject:exerciseTitle];
+                NSMutableArray *newExercises = [[NSMutableArray alloc] init];
+                for (NSDictionary *exerciseDictionary in exercises) {
+                    LPExercise *exercise = [LPExercise exerciseWithDictionary:exerciseDictionary];
+                    [newExercises addObject:exercise];
                 }
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    self.exercises = exerciseTitles;
+                    self.exercises = newExercises;
                     [self.exercisesTableView reloadData];
                 });
             }
@@ -60,7 +61,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExerciseCell" forIndexPath:indexPath];
-    cell.textLabel.text = _exercises[indexPath.row];
+    LPExercise *exercise = _exercises[indexPath.row];
+    cell.textLabel.text = exercise.name;
     return cell;
 }
 

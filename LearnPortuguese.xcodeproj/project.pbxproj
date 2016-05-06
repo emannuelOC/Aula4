@@ -16,6 +16,8 @@
 		A2C0A1431CDC551F006C2340 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2C0A1411CDC551F006C2340 /* LaunchScreen.storyboard */; };
 		A2C0A14E1CDC551F006C2340 /* LearnPortugueseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C0A14D1CDC551F006C2340 /* LearnPortugueseTests.m */; };
 		A2C0A1591CDC551F006C2340 /* LearnPortugueseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C0A1581CDC551F006C2340 /* LearnPortugueseUITests.m */; };
+		A2C0A1681CDC5F3D006C2340 /* LPExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C0A1671CDC5F3D006C2340 /* LPExercise.m */; };
+		A2C0A16B1CDC5F4C006C2340 /* LPExerciseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C0A16A1CDC5F4C006C2340 /* LPExerciseItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		A2C0A1541CDC551F006C2340 /* LearnPortugueseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearnPortugueseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C0A1581CDC551F006C2340 /* LearnPortugueseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnPortugueseUITests.m; sourceTree = "<group>"; };
 		A2C0A15A1CDC551F006C2340 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2C0A1661CDC5F3D006C2340 /* LPExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPExercise.h; sourceTree = "<group>"; };
+		A2C0A1671CDC5F3D006C2340 /* LPExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPExercise.m; sourceTree = "<group>"; };
+		A2C0A1691CDC5F4C006C2340 /* LPExerciseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPExerciseItem.h; sourceTree = "<group>"; };
+		A2C0A16A1CDC5F4C006C2340 /* LPExerciseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPExerciseItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,15 +109,8 @@
 		A2C0A12F1CDC551F006C2340 /* LearnPortuguese */ = {
 			isa = PBXGroup;
 			children = (
-				A2C0A1331CDC551F006C2340 /* AppDelegate.h */,
-				A2C0A1341CDC551F006C2340 /* AppDelegate.m */,
-				A2C0A1361CDC551F006C2340 /* ViewController.h */,
-				A2C0A1371CDC551F006C2340 /* ViewController.m */,
-				A2C0A1391CDC551F006C2340 /* Main.storyboard */,
-				A2C0A13F1CDC551F006C2340 /* Assets.xcassets */,
-				A2C0A1411CDC551F006C2340 /* LaunchScreen.storyboard */,
-				A2C0A1441CDC551F006C2340 /* Info.plist */,
-				A2C0A13C1CDC551F006C2340 /* LearnPortuguese.xcdatamodeld */,
+				A2C0A16D1CDC6235006C2340 /* Controllers */,
+				A2C0A16C1CDC622F006C2340 /* Model */,
 				A2C0A1301CDC551F006C2340 /* Supporting Files */,
 			);
 			path = LearnPortuguese;
@@ -120,6 +119,13 @@
 		A2C0A1301CDC551F006C2340 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A2C0A1391CDC551F006C2340 /* Main.storyboard */,
+				A2C0A13F1CDC551F006C2340 /* Assets.xcassets */,
+				A2C0A1411CDC551F006C2340 /* LaunchScreen.storyboard */,
+				A2C0A1441CDC551F006C2340 /* Info.plist */,
+				A2C0A13C1CDC551F006C2340 /* LearnPortuguese.xcdatamodeld */,
+				A2C0A1331CDC551F006C2340 /* AppDelegate.h */,
+				A2C0A1341CDC551F006C2340 /* AppDelegate.m */,
 				A2C0A1311CDC551F006C2340 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -141,6 +147,26 @@
 				A2C0A15A1CDC551F006C2340 /* Info.plist */,
 			);
 			path = LearnPortugueseUITests;
+			sourceTree = "<group>";
+		};
+		A2C0A16C1CDC622F006C2340 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A2C0A1661CDC5F3D006C2340 /* LPExercise.h */,
+				A2C0A1671CDC5F3D006C2340 /* LPExercise.m */,
+				A2C0A1691CDC5F4C006C2340 /* LPExerciseItem.h */,
+				A2C0A16A1CDC5F4C006C2340 /* LPExerciseItem.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A2C0A16D1CDC6235006C2340 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A2C0A1361CDC551F006C2340 /* ViewController.h */,
+				A2C0A1371CDC551F006C2340 /* ViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +303,8 @@
 				A2C0A13E1CDC551F006C2340 /* LearnPortuguese.xcdatamodeld in Sources */,
 				A2C0A1351CDC551F006C2340 /* AppDelegate.m in Sources */,
 				A2C0A1321CDC551F006C2340 /* main.m in Sources */,
+				A2C0A16B1CDC5F4C006C2340 /* LPExerciseItem.m in Sources */,
+				A2C0A1681CDC5F3D006C2340 /* LPExercise.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
