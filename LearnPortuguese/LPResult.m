@@ -13,6 +13,8 @@
 
 + (NSArray *)getAllResults:(NSManagedObjectContext *)context {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"LPResult"];
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:NO];
+    request.sortDescriptors = @[descriptor];
     NSError *error;
     NSArray *results = [context executeFetchRequest:request error:&error];
     if (!error) {
