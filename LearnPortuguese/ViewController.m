@@ -30,7 +30,9 @@
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (!error) {
             NSError *localError;
-            NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+            NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data
+                                                                    options:0
+                                                                      error:&localError];
             if (results) {
                 NSArray *exercises = results[@"results"];
                 NSMutableArray *newExercises = [[NSMutableArray alloc] init];

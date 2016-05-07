@@ -19,15 +19,11 @@
 
 #pragma mark - ViewController life cycle
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
     _results = [LPResult getAllResults:context];
     [_resultsTableView reloadData];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateResults) name:@"LPDidUpdateResults" object:nil];
 }
 
@@ -50,7 +46,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ResultCell" forIndexPath:indexPath];
     LPResult *result = _results[indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%@", result.exerciseName];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%2.f", result.generalResult.floatValue];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", result.generalResult.floatValue];
     return cell;
 }
 

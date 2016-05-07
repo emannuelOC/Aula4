@@ -34,7 +34,7 @@
     for (LPResultItem *item in self.resultItems) {
         total += item.evaluation.floatValue;
     }
-    total = total / self.resultItems.count;
+    total = total / (float)self.resultItems.count;
     self.generalResult = [NSNumber numberWithFloat:total];
     return total;
 }
