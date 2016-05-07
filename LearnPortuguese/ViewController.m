@@ -6,6 +6,7 @@
 //  Copyright © 2016 Emannuel Carvalho. All rights reserved.
 //
 
+#import "LPExerciseViewController.h"
 #import "ViewController.h"
 #import "LPExercise.h"
 
@@ -64,6 +65,25 @@
     LPExercise *exercise = _exercises[indexPath.row];
     cell.textLabel.text = exercise.name;
     return cell;
+}
+
+#pragma mark - TableView delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    LPExercise *exercise = _exercises[indexPath.row];
+    if (exercise) {
+        [self performSegueWithIdentifier:@"StartExercise" sender:exercise];
+    }
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"StartExercise"]) {
+        UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
+        LPExerciseViewController *vc = (LPExerciseViewController *)nav.visibleViewController;
+        vc.exercise = (LPExercise *)sender;
+    }
 }
 
 @end
